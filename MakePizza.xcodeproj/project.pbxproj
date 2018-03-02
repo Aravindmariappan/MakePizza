@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		907049B82049245E007A51D9 /* DatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 907049B72049245E007A51D9 /* DatabaseManager.m */; };
 		90E948D92049141000FBB9E2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 90E948D82049141000FBB9E2 /* AppDelegate.m */; };
-		90E948DC2049141000FBB9E2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90E948DB2049141000FBB9E2 /* ViewController.m */; };
 		90E948DF2049141000FBB9E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90E948DD2049141000FBB9E2 /* Main.storyboard */; };
 		90E948E22049141000FBB9E2 /* MakePizza.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 90E948E02049141000FBB9E2 /* MakePizza.xcdatamodeld */; };
 		90E948E42049141000FBB9E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90E948E32049141000FBB9E2 /* Assets.xcassets */; };
@@ -28,11 +28,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		907049B62049245E007A51D9 /* DatabaseManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DatabaseManager.h; sourceTree = "<group>"; };
+		907049B72049245E007A51D9 /* DatabaseManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DatabaseManager.m; sourceTree = "<group>"; };
 		90E948D42049141000FBB9E2 /* MakePizza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MakePizza.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90E948D72049141000FBB9E2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		90E948D82049141000FBB9E2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		90E948DA2049141000FBB9E2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		90E948DB2049141000FBB9E2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		90E948DE2049141000FBB9E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		90E948E12049141000FBB9E2 /* MakePizza.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MakePizza.xcdatamodel; sourceTree = "<group>"; };
 		90E948E32049141000FBB9E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -62,6 +62,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		907049B5204920F6007A51D9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				907049B62049245E007A51D9 /* DatabaseManager.h */,
+				907049B72049245E007A51D9 /* DatabaseManager.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		90E948CB2049141000FBB9E2 = {
 			isa = PBXGroup;
 			children = (
@@ -85,14 +94,10 @@
 			children = (
 				90E948D72049141000FBB9E2 /* AppDelegate.h */,
 				90E948D82049141000FBB9E2 /* AppDelegate.m */,
-				90E948DA2049141000FBB9E2 /* ViewController.h */,
-				90E948DB2049141000FBB9E2 /* ViewController.m */,
-				90E948DD2049141000FBB9E2 /* Main.storyboard */,
-				90E948E32049141000FBB9E2 /* Assets.xcassets */,
-				90E948E52049141000FBB9E2 /* LaunchScreen.storyboard */,
-				90E948E82049141000FBB9E2 /* Info.plist */,
-				90E948E92049141000FBB9E2 /* main.m */,
-				90E948E02049141000FBB9E2 /* MakePizza.xcdatamodeld */,
+				90E9490120491F2C00FBB9E2 /* Model */,
+				90E9490220491F9200FBB9E2 /* View */,
+				907049B5204920F6007A51D9 /* Controller */,
+				90E9490020491BFC00FBB9E2 /* Resources */,
 			);
 			path = MakePizza;
 			sourceTree = "<group>";
@@ -104,6 +109,33 @@
 				90E948F52049141000FBB9E2 /* Info.plist */,
 			);
 			path = MakePizzaTests;
+			sourceTree = "<group>";
+		};
+		90E9490020491BFC00FBB9E2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				90E948E32049141000FBB9E2 /* Assets.xcassets */,
+				90E948E52049141000FBB9E2 /* LaunchScreen.storyboard */,
+				90E948E82049141000FBB9E2 /* Info.plist */,
+				90E948E92049141000FBB9E2 /* main.m */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		90E9490120491F2C00FBB9E2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				90E948E02049141000FBB9E2 /* MakePizza.xcdatamodeld */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		90E9490220491F9200FBB9E2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				90E948DD2049141000FBB9E2 /* Main.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,8 +240,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				90E948DC2049141000FBB9E2 /* ViewController.m in Sources */,
 				90E948E22049141000FBB9E2 /* MakePizza.xcdatamodeld in Sources */,
+				907049B82049245E007A51D9 /* DatabaseManager.m in Sources */,
 				90E948EA2049141000FBB9E2 /* main.m in Sources */,
 				90E948D92049141000FBB9E2 /* AppDelegate.m in Sources */,
 			);
@@ -362,7 +394,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = MakePizza/Info.plist;
+				INFOPLIST_FILE = MakePizza/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Test.MakePizza;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -375,7 +407,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = MakePizza/Info.plist;
+				INFOPLIST_FILE = MakePizza/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Test.MakePizza;
 				PRODUCT_NAME = "$(TARGET_NAME)";
