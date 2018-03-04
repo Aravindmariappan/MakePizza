@@ -10,16 +10,20 @@
 #import <CoreData/CoreData.h>
 #import "Group+CoreDataClass.h"
 #import "Variation+CoreDataClass.h"
+#import "Cart+CoreDataClass.h"
 
 @interface DatabaseManager : NSObject
 
 +(DatabaseManager *)sharedInstance;
 
+@property (readonly) Cart *defaultCart;
 @property (readonly, strong) NSPersistentContainer *persistentContainer;
 @property (readonly, strong) NSManagedObjectContext *mainContext;
 
 - (void)saveContext;
 
 - (NSArray *)storeGroupDataFromDict:(NSDictionary *)dict;
+
+- (void)insertVariation:(Variation *)variation intoCart:(Cart *)cart;
 
 @end

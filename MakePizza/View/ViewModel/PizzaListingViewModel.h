@@ -13,12 +13,13 @@
 
 - (instancetype)initWithAvailableGroups;
 
-@property (readonly) NSString *itemDescription;
 @property (readonly) NSString *itemCost;
+@property (readonly) Cart *cart;
 
 - (void)loadAllGroupsWithCompletion:(void(^)(NSArray *items))completion;
 - (NSInteger)getGroupsCount;
 - (PizzaListingCellViewModel *)cellViewModelAtIndex:(NSInteger)index;
-- (NSString *)descriptionForSelectedVariation:(PizzaListingCellViewModel *)selectionCellVM;
+- (NSString *)descriptionForVariantAtIndex:(NSInteger)index;
+- (void)addedSelectedVariation:(Variation *)variation;
 
 @end

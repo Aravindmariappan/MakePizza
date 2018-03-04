@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *groupNameLabel;
 @property (strong, nonatomic) IBOutletCollection(UIView) NSArray *optionViews;
 @property (weak, nonatomic) IBOutlet UIStackView *stackView;
+@property (weak, nonatomic) IBOutlet UILabel *priceLabel;
 
 @end
 
@@ -34,6 +35,7 @@
 - (void)configureCellWithViewModel:(PizzaListingCellViewModel *)viewModel {
     self.selectionCellVM = viewModel;
     self.groupNameLabel.text = viewModel.displayedGroupTitle;
+    self.priceLabel.text = viewModel.price;
     [self updateVariation];
 }
 
@@ -69,6 +71,7 @@
     NSInteger index = [self.optionViews indexOfObject:optionView];
     [self.selectionCellVM updateVariationSelectionAtIndex:index];
     [self updateVariation];
+    self.priceLabel.text = self.selectionCellVM.price;
     if (self.delegate != nil && [self.delegate respondsToSelector:@selector(groupSelectionCell:selectedWithVariationAtIndex:)]) {
         [self.delegate groupSelectionCell:self selectedWithVariationAtIndex:index];
     }

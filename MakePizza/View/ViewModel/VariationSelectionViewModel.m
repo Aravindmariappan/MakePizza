@@ -14,6 +14,7 @@
 @property (readwrite) NSString *variationName;
 @property (readwrite) BOOL isVeg;
 @property (readwrite) BOOL isSelected;
+@property (readwrite) NSInteger price;
 
 @end
 
@@ -22,9 +23,11 @@
 - (instancetype)initWithVariation:(Variation *)variation isSelected:(BOOL)isSelected {
     self = [super init];
     if (self) {
+        self.variation = variation;
         self.variationName = variation.name.capitalizedString;
         self.isVeg = variation.isVeg;
         self.isSelected = isSelected;
+        self.price = variation.price;
     }
     
     return self;

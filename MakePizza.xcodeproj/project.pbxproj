@@ -10,11 +10,11 @@
 		907049B82049245E007A51D9 /* DatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 907049B72049245E007A51D9 /* DatabaseManager.m */; };
 		90E948D92049141000FBB9E2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 90E948D82049141000FBB9E2 /* AppDelegate.m */; };
 		90E948DF2049141000FBB9E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90E948DD2049141000FBB9E2 /* Main.storyboard */; };
-		90E948E22049141000FBB9E2 /* MakePizza.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 90E948E02049141000FBB9E2 /* MakePizza.xcdatamodeld */; };
 		90E948E42049141000FBB9E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90E948E32049141000FBB9E2 /* Assets.xcassets */; };
 		90E948E72049141000FBB9E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90E948E52049141000FBB9E2 /* LaunchScreen.storyboard */; };
 		90E948EA2049141000FBB9E2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 90E948E92049141000FBB9E2 /* main.m */; };
 		90E948F42049141000FBB9E2 /* MakePizzaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 90E948F32049141000FBB9E2 /* MakePizzaTests.m */; };
+		F212BC01204C378E009333DC /* MakePizza.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F212BBFF204C378E009333DC /* MakePizza.xcdatamodeld */; };
 		F21A64BC204A632700BC1033 /* PizzaListingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F21A64BB204A632700BC1033 /* PizzaListingViewController.m */; };
 		F21A64C1204A66F900BC1033 /* PizzaListingViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F21A64C0204A66F900BC1033 /* PizzaListingViewModel.m */; };
 		F21A64C4204A6E1F00BC1033 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F21A64C3204A6E1F00BC1033 /* NetworkManager.m */; };
@@ -41,7 +41,6 @@
 		90E948D72049141000FBB9E2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		90E948D82049141000FBB9E2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		90E948DE2049141000FBB9E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		90E948E12049141000FBB9E2 /* MakePizza.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MakePizza.xcdatamodel; sourceTree = "<group>"; };
 		90E948E32049141000FBB9E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		90E948E62049141000FBB9E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		90E948E82049141000FBB9E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -50,6 +49,7 @@
 		90E948F32049141000FBB9E2 /* MakePizzaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MakePizzaTests.m; sourceTree = "<group>"; };
 		90E948F52049141000FBB9E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F20192C5204BC16900C00B0C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		F212BC00204C378E009333DC /* MakePizza.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MakePizza.xcdatamodel; sourceTree = "<group>"; };
 		F21A64BA204A632700BC1033 /* PizzaListingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PizzaListingViewController.h; sourceTree = "<group>"; };
 		F21A64BB204A632700BC1033 /* PizzaListingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PizzaListingViewController.m; sourceTree = "<group>"; };
 		F21A64BF204A66F900BC1033 /* PizzaListingViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PizzaListingViewModel.h; sourceTree = "<group>"; };
@@ -152,7 +152,7 @@
 		90E9490120491F2C00FBB9E2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				90E948E02049141000FBB9E2 /* MakePizza.xcdatamodeld */,
+				F212BBFF204C378E009333DC /* MakePizza.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -305,13 +305,13 @@
 			files = (
 				F21A64BC204A632700BC1033 /* PizzaListingViewController.m in Sources */,
 				F21A64C4204A6E1F00BC1033 /* NetworkManager.m in Sources */,
-				90E948E22049141000FBB9E2 /* MakePizza.xcdatamodeld in Sources */,
 				F21A64D0204AE8A700BC1033 /* PizzaListingCellViewModel.m in Sources */,
 				907049B82049245E007A51D9 /* DatabaseManager.m in Sources */,
 				F21A64C1204A66F900BC1033 /* PizzaListingViewModel.m in Sources */,
 				90E948EA2049141000FBB9E2 /* main.m in Sources */,
 				F21A64CC204ADE9A00BC1033 /* PizzaGroupSelectionTableViewCell.m in Sources */,
 				90E948D92049141000FBB9E2 /* AppDelegate.m in Sources */,
+				F212BC01204C378E009333DC /* MakePizza.xcdatamodeld in Sources */,
 				F21A64D3204AEB0600BC1033 /* VariationSelectionViewModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -550,12 +550,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		90E948E02049141000FBB9E2 /* MakePizza.xcdatamodeld */ = {
+		F212BBFF204C378E009333DC /* MakePizza.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				90E948E12049141000FBB9E2 /* MakePizza.xcdatamodel */,
+				F212BC00204C378E009333DC /* MakePizza.xcdatamodel */,
 			);
-			currentVersion = 90E948E12049141000FBB9E2 /* MakePizza.xcdatamodel */;
+			currentVersion = F212BC00204C378E009333DC /* MakePizza.xcdatamodel */;
 			path = MakePizza.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

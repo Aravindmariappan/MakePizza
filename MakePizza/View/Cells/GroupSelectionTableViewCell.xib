@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -22,7 +25,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Crest" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="75m-wD-pZb">
-                        <rect key="frame" x="16" y="16" width="268" height="20.5"/>
+                        <rect key="frame" x="16" y="16" width="40" height="21"/>
                         <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
                         <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -35,7 +38,7 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="111" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Manchurian" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TBu-cZ-nnS" userLabel="Descrpition">
                                         <rect key="frame" x="0.0" y="0.0" width="90.5" height="50"/>
-                                        <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -73,7 +76,7 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="111" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Large" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l21-j5-R5b" userLabel="Descrpition">
                                         <rect key="frame" x="0.0" y="0.0" width="101" height="50"/>
-                                        <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -101,7 +104,7 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="111" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sauce" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bc3-dz-UBY" userLabel="Descrpition">
                                         <rect key="frame" x="0.0" y="0.0" width="100.5" height="50"/>
-                                        <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -130,12 +133,21 @@
                             <constraint firstAttribute="height" constant="50" id="7SC-vW-ii7"/>
                         </constraints>
                     </stackView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="₹ 200" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qX9-0b-RHp" userLabel="Price">
+                        <rect key="frame" x="263" y="16" width="41" height="20.5"/>
+                        <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
+                        <color key="textColor" red="0.90980392160000001" green="0.0" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="VXV-kq-tff" firstAttribute="top" secondItem="qX9-0b-RHp" secondAttribute="bottom" constant="10" id="AT5-Sc-qfx"/>
                     <constraint firstAttribute="bottom" secondItem="VXV-kq-tff" secondAttribute="bottom" constant="10" id="Ez4-fh-yNg"/>
                     <constraint firstItem="75m-wD-pZb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="Lot-3y-R63"/>
+                    <constraint firstItem="qX9-0b-RHp" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="R7e-O5-lfa"/>
+                    <constraint firstItem="qX9-0b-RHp" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="75m-wD-pZb" secondAttribute="trailing" constant="10" id="S3n-QX-QZX"/>
                     <constraint firstAttribute="trailing" secondItem="VXV-kq-tff" secondAttribute="trailing" constant="10" id="TyK-WW-6BX"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="75m-wD-pZb" secondAttribute="trailing" constant="20" id="egL-tF-46k"/>
+                    <constraint firstItem="qX9-0b-RHp" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="WAw-jE-gFZ"/>
                     <constraint firstItem="VXV-kq-tff" firstAttribute="top" secondItem="75m-wD-pZb" secondAttribute="bottom" constant="10" id="gza-Ga-Pxo"/>
                     <constraint firstItem="VXV-kq-tff" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="hEs-OC-14G"/>
                     <constraint firstItem="75m-wD-pZb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="l2y-dn-hEy"/>
@@ -144,6 +156,7 @@
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
                 <outlet property="groupNameLabel" destination="75m-wD-pZb" id="4Cl-Gl-Gv9"/>
+                <outlet property="priceLabel" destination="qX9-0b-RHp" id="KCm-Yw-0SQ"/>
                 <outlet property="stackView" destination="VXV-kq-tff" id="DYH-E1-YLA"/>
                 <outletCollection property="optionViews" destination="fdK-GL-gqm" id="3A2-oW-5Z2"/>
                 <outletCollection property="optionViews" destination="Opq-Xo-Ew2" id="hlw-wG-RY8"/>

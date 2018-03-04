@@ -12,9 +12,11 @@
 
 - (instancetype)initWithVariation:(Variation *)variation isSelected:(BOOL)isSelected;
 
+@property (readonly) Variation *variation;
 @property (readonly) NSString *variationName;
 @property (readonly) BOOL isVeg;
 @property (readonly) BOOL isSelected;
+@property (readonly) NSInteger price;
 
 - (void)updateVariationSelection:(BOOL)isSelected;
 

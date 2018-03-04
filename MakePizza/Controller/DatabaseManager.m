@@ -8,6 +8,14 @@
 
 #import "DatabaseManager.h"
 
+#define DefaultCartID 123456789
+
+@interface DatabaseManager()
+
+@property (readwrite, nonatomic) Cart *defaultCart;
+
+@end
+
 @implementation DatabaseManager
 
 static DatabaseManager *sharedInstance = nil;
@@ -153,4 +161,53 @@ static DatabaseManager *sharedInstance = nil;
     
     return variation;
 }
+
+#pragma mark - Cart
+
+- (Cart *)defaultCart {
+    if (_defaultCart == nil) {
+        NSNumber *cartID = @(DefaultCartID);
+        _defaultCart = [self fetchCartWithCartID:cartID.intValue];
+        if (_defaultCart == nil) {
+            _defaultCart = [self insertDefaultCartForID:cartID];
+            [self saveContext];
+        }
+        _defaultCart.variations = nil;
+    }
+    
+    return _defaultCart;
+}
+
+- (Cart *)fetchCartWithCartID:(int)cartID {
+    NSPredicate *idPredicate = [NSPredicate predicateWithFormat:@"cartID = %d",cartID];
+    NSFetchRequest *fetchRequest = [Cart fetchRequest];
+    [fetchRequest setPredicate:idPredicate];
+    NSArray *cartPresent = [self.mainContext executeFetchRequest:fetchRequest error:nil];
+    Cart *fetchedCart = [cartPresent firstObject];
+    
+    return fetchedCart;
+}
+
+- (Cart *)insertDefaultCartForID:(NSNumber *)cartID {
+    Cart *defaultCart = [NSEntityDescription insertNewObjectForEntityForName:@"Cart" inManagedObjectContext:self.persistentContainer.viewContext];
+    [defaultCart setCartID:cartID.intValue];
+    
+    return defaultCart;
+}
+
+- (void)insertVariation:(Variation *)variation intoCart:(Cart *)cart {
+    NSPredicate *groupIDPredicate = [NSPredicate predicateWithFormat:@"group.groupID = %d",variation.group.groupID];
+    NSSet *variations = cart.variations;
+    NSSet *filteredVariations = [variations filteredSetUsingPredicate:groupIDPredicate];
+    [cart removeVariations:filteredVariations];
+    [cart addVariationsObject:variation];
+    int32_t price = 0;
+    for (Variation *variation in cart.variations) {
+        price += variation.price;
+    }
+    cart.totalPrice = price;
+    [self saveContext];
+}
+
+
 @end

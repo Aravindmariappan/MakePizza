@@ -15,9 +15,10 @@
 - (instancetype)initWithGroup:(Group *)group;
 
 @property (readonly) NSString *displayedGroupTitle;
-@property (readonly) VariationSelectionViewModel *selectedVariationVM;
+@property (readonly) NSString *price;
 
 - (VariationSelectionViewModel *)variationSelectionVMAtIndex:(NSInteger)index;
 - (void)updateVariationSelectionAtIndex:(NSInteger)index;
+- (Variation *)getSelectedVariation;
 
 @end

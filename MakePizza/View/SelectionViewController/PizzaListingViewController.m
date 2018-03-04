@@ -26,6 +26,7 @@
     [super viewDidLoad];
     [self configureTableView:self.tableView];
     [self configureSelectionViewModel];
+    [self configureDescriptionLabels];
 }
 
 #pragma mark - Selection ViewModel
@@ -35,6 +36,7 @@
     [selectionVM loadAllGroupsWithCompletion:^(NSArray *items) {
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
             [self.tableView reloadData];
+            [self configureDescriptionLabels];
         }];
     }];
     self.selectionVM = selectionVM;
@@ -49,10 +51,11 @@
     
 }
 
-- (void)configureDescriptionLabels:(PizzaListingCellViewModel *)viewModel {
-//    [self.descriptionStackView.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-//        NSString *subView 
-//    }];
+- (void)configureDescriptionLabels {
+    [self.descriptionStackView.subviews enumerateObjectsUsingBlock:^(UILabel *label, NSUInteger index, BOOL * _Nonnull stop) {
+        label.text = [self.selectionVM descriptionForVariantAtIndex:index];
+    }];
+    self.priceStackView.text = self.selectionVM.itemCost;
 }
 
 #pragma mark - TableViewDataSource
@@ -73,7 +76,9 @@
 #pragma mark - GroupSelectionTableViewCellDelegate
 
 - (void)groupSelectionCell:(PizzaGroupSelectionTableViewCell *)cell selectedWithVariationAtIndex:(NSInteger)index {
-
+    PizzaListingCellViewModel *cellVM = cell.selectionCellVM;
+    [self.selectionVM addedSelectedVariation:[cellVM getSelectedVariation]];
+    [self configureDescriptionLabels];
 }
 
 @end

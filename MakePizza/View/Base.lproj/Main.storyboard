@@ -35,29 +35,29 @@
                                 <rect key="frame" x="0.0" y="539" width="375" height="128"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="H5k-3r-JCR">
-                                        <rect key="frame" x="10" y="30" width="190" height="67.5"/>
+                                        <rect key="frame" x="10" y="27.5" width="200" height="73.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Crust : Thin" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4rK-GU-Idw" userLabel="Crust">
-                                                <rect key="frame" x="0.0" y="0.0" width="190" height="22.5"/>
-                                                <fontDescription key="fontDescription" name="TrebuchetMS-Italic" family="Trebuchet MS" pointSize="19"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Crust : Cheese Burst" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4rK-GU-Idw" userLabel="Crust">
+                                                <rect key="frame" x="0.0" y="0.0" width="200" height="24.5"/>
+                                                <fontDescription key="fontDescription" name="TrebuchetMS-Italic" family="Trebuchet MS" pointSize="21"/>
                                                 <color key="textColor" name="AppTheme"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Size : Large" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B33-7a-KZT" userLabel="Size">
-                                                <rect key="frame" x="0.0" y="22.5" width="190" height="22.5"/>
-                                                <fontDescription key="fontDescription" name="TrebuchetMS-Italic" family="Trebuchet MS" pointSize="19"/>
+                                                <rect key="frame" x="0.0" y="24.5" width="200" height="24.5"/>
+                                                <fontDescription key="fontDescription" name="TrebuchetMS-Italic" family="Trebuchet MS" pointSize="21"/>
                                                 <color key="textColor" name="AppTheme"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sauce : Manchurian" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Exz-l7-oNL" userLabel="Sauce">
-                                                <rect key="frame" x="0.0" y="45" width="190" height="22.5"/>
-                                                <fontDescription key="fontDescription" name="TrebuchetMS-Italic" family="Trebuchet MS" pointSize="19"/>
+                                                <rect key="frame" x="0.0" y="49" width="200" height="24.5"/>
+                                                <fontDescription key="fontDescription" name="TrebuchetMS-Italic" family="Trebuchet MS" pointSize="21"/>
                                                 <color key="textColor" name="AppTheme"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="190" id="0D4-VA-yiF"/>
+                                            <constraint firstAttribute="width" constant="200" id="0D4-VA-yiF"/>
                                         </constraints>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fgr-cB-P6A">
@@ -68,7 +68,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Rs. 1000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ld-tR-g4w" userLabel="Price">
-                                        <rect key="frame" x="210" y="50.5" width="150" height="27"/>
+                                        <rect key="frame" x="220" y="50.5" width="150" height="27"/>
                                         <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="23"/>
                                         <color key="textColor" red="0.90980392160000001" green="0.0" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -83,7 +83,7 @@
                                     <constraint firstAttribute="trailing" secondItem="fgr-cB-P6A" secondAttribute="trailing" id="DlG-3Y-Ugk"/>
                                     <constraint firstItem="fgr-cB-P6A" firstAttribute="top" secondItem="c4I-ba-ZhM" secondAttribute="top" id="Kzg-o7-fXX"/>
                                     <constraint firstItem="H5k-3r-JCR" firstAttribute="centerY" secondItem="c4I-ba-ZhM" secondAttribute="centerY" id="M6a-YV-BrV"/>
-                                    <constraint firstAttribute="trailing" secondItem="4Ld-tR-g4w" secondAttribute="trailing" constant="15" id="Si0-zM-Dm5"/>
+                                    <constraint firstAttribute="trailing" secondItem="4Ld-tR-g4w" secondAttribute="trailing" constant="5" id="Si0-zM-Dm5"/>
                                     <constraint firstItem="H5k-3r-JCR" firstAttribute="leading" secondItem="c4I-ba-ZhM" secondAttribute="leading" constant="10" id="qhj-mn-y8Q"/>
                                 </constraints>
                             </view>

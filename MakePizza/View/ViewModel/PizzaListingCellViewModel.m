@@ -13,6 +13,7 @@
 @property (readwrite) Group *displayedGroup;
 @property (readwrite) NSArray *variationSelectionVMs;
 @property (readwrite, nonatomic) NSString *displayedGroupTitle;
+@property (readwrite, nonatomic) NSString *price;
 @property VariationSelectionViewModel *selectedVariationVM;
 
 @end
@@ -24,6 +25,7 @@
     if (self) {
         self.displayedGroup = group;
         self.displayedGroupTitle = group.name.capitalizedString;
+        self.price = @"";
         self.variationSelectionVMs = [self configureVariationsForGroup:group];
     }
 
@@ -38,6 +40,7 @@
         VariationSelectionViewModel *variationVM = [[VariationSelectionViewModel alloc] initWithVariation:variation isSelected:variation.isDefault];
         if(variation.isDefault == YES) {
             self.selectedVariationVM = variationVM;
+            self.price = [self getPriceString:variation.price];
         }
         [variationVMs addObject:variationVM];
     }
@@ -53,6 +56,17 @@
     [unselectedViewModel updateVariationSelection:NO];
     self.selectedVariationVM = [self.variationSelectionVMs objectAtIndex:index];
     [self.selectedVariationVM updateVariationSelection:YES];
+    self.price = [self getPriceString:self.selectedVariationVM.price];
+}
+
+- (Variation *)getSelectedVariation {
+    return self.selectedVariationVM.variation;
+}
+
+#pragma mark -
+
+- (NSString *)getPriceString:(double)price {
+    return [NSString stringWithFormat:@"₹ %.2f",price];
 }
 
 @end
