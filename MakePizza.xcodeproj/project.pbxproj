@@ -15,6 +15,13 @@
 		90E948E72049141000FBB9E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90E948E52049141000FBB9E2 /* LaunchScreen.storyboard */; };
 		90E948EA2049141000FBB9E2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 90E948E92049141000FBB9E2 /* main.m */; };
 		90E948F42049141000FBB9E2 /* MakePizzaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 90E948F32049141000FBB9E2 /* MakePizzaTests.m */; };
+		F21A64BC204A632700BC1033 /* SelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F21A64BB204A632700BC1033 /* SelectionViewController.m */; };
+		F21A64C1204A66F900BC1033 /* SelectionViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F21A64C0204A66F900BC1033 /* SelectionViewModel.m */; };
+		F21A64C4204A6E1F00BC1033 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F21A64C3204A6E1F00BC1033 /* NetworkManager.m */; };
+		F21A64CC204ADE9A00BC1033 /* GroupSelectionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F21A64CA204ADE9A00BC1033 /* GroupSelectionTableViewCell.m */; };
+		F21A64CD204ADE9A00BC1033 /* GroupSelectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F21A64CB204ADE9A00BC1033 /* GroupSelectionTableViewCell.xib */; };
+		F21A64D0204AE8A700BC1033 /* SelectionCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F21A64CF204AE8A700BC1033 /* SelectionCellViewModel.m */; };
+		F21A64D3204AEB0600BC1033 /* VariationSelectionViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F21A64D2204AEB0600BC1033 /* VariationSelectionViewModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +49,21 @@
 		90E948EF2049141000FBB9E2 /* MakePizzaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MakePizzaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		90E948F32049141000FBB9E2 /* MakePizzaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MakePizzaTests.m; sourceTree = "<group>"; };
 		90E948F52049141000FBB9E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F21A64BA204A632700BC1033 /* SelectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SelectionViewController.h; sourceTree = "<group>"; };
+		F21A64BB204A632700BC1033 /* SelectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelectionViewController.m; sourceTree = "<group>"; };
+		F21A64BF204A66F900BC1033 /* SelectionViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SelectionViewModel.h; sourceTree = "<group>"; };
+		F21A64C0204A66F900BC1033 /* SelectionViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelectionViewModel.m; sourceTree = "<group>"; };
+		F21A64C2204A6E1F00BC1033 /* NetworkManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
+		F21A64C3204A6E1F00BC1033 /* NetworkManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
+		F21A64C6204A868D00BC1033 /* MakePizza-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MakePizza-Prefix.pch"; sourceTree = "<group>"; };
+		F21A64C7204A8A8900BC1033 /* APIConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIConstants.h; sourceTree = "<group>"; };
+		F21A64C9204ADE9A00BC1033 /* GroupSelectionTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GroupSelectionTableViewCell.h; sourceTree = "<group>"; };
+		F21A64CA204ADE9A00BC1033 /* GroupSelectionTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GroupSelectionTableViewCell.m; sourceTree = "<group>"; };
+		F21A64CB204ADE9A00BC1033 /* GroupSelectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupSelectionTableViewCell.xib; sourceTree = "<group>"; };
+		F21A64CE204AE8A700BC1033 /* SelectionCellViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SelectionCellViewModel.h; sourceTree = "<group>"; };
+		F21A64CF204AE8A700BC1033 /* SelectionCellViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelectionCellViewModel.m; sourceTree = "<group>"; };
+		F21A64D1204AEB0600BC1033 /* VariationSelectionViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VariationSelectionViewModel.h; sourceTree = "<group>"; };
+		F21A64D2204AEB0600BC1033 /* VariationSelectionViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VariationSelectionViewModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +89,8 @@
 			children = (
 				907049B62049245E007A51D9 /* DatabaseManager.h */,
 				907049B72049245E007A51D9 /* DatabaseManager.m */,
+				F21A64C2204A6E1F00BC1033 /* NetworkManager.h */,
+				F21A64C3204A6E1F00BC1033 /* NetworkManager.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -118,6 +142,8 @@
 				90E948E52049141000FBB9E2 /* LaunchScreen.storyboard */,
 				90E948E82049141000FBB9E2 /* Info.plist */,
 				90E948E92049141000FBB9E2 /* main.m */,
+				F21A64C6204A868D00BC1033 /* MakePizza-Prefix.pch */,
+				F21A64C7204A8A8900BC1033 /* APIConstants.h */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -133,9 +159,44 @@
 		90E9490220491F9200FBB9E2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F21A64B9204A62EC00BC1033 /* SelectionViewController */,
+				F21A64C8204ADD2500BC1033 /* Cells */,
+				F21A64BE204A66CF00BC1033 /* ViewModel */,
 				90E948DD2049141000FBB9E2 /* Main.storyboard */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		F21A64B9204A62EC00BC1033 /* SelectionViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F21A64BA204A632700BC1033 /* SelectionViewController.h */,
+				F21A64BB204A632700BC1033 /* SelectionViewController.m */,
+			);
+			path = SelectionViewController;
+			sourceTree = "<group>";
+		};
+		F21A64BE204A66CF00BC1033 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F21A64BF204A66F900BC1033 /* SelectionViewModel.h */,
+				F21A64C0204A66F900BC1033 /* SelectionViewModel.m */,
+				F21A64CE204AE8A700BC1033 /* SelectionCellViewModel.h */,
+				F21A64CF204AE8A700BC1033 /* SelectionCellViewModel.m */,
+				F21A64D1204AEB0600BC1033 /* VariationSelectionViewModel.h */,
+				F21A64D2204AEB0600BC1033 /* VariationSelectionViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F21A64C8204ADD2500BC1033 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F21A64C9204ADE9A00BC1033 /* GroupSelectionTableViewCell.h */,
+				F21A64CA204ADE9A00BC1033 /* GroupSelectionTableViewCell.m */,
+				F21A64CB204ADE9A00BC1033 /* GroupSelectionTableViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,6 +283,7 @@
 			files = (
 				90E948E72049141000FBB9E2 /* LaunchScreen.storyboard in Resources */,
 				90E948E42049141000FBB9E2 /* Assets.xcassets in Resources */,
+				F21A64CD204ADE9A00BC1033 /* GroupSelectionTableViewCell.xib in Resources */,
 				90E948DF2049141000FBB9E2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -240,10 +302,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F21A64BC204A632700BC1033 /* SelectionViewController.m in Sources */,
+				F21A64C4204A6E1F00BC1033 /* NetworkManager.m in Sources */,
 				90E948E22049141000FBB9E2 /* MakePizza.xcdatamodeld in Sources */,
+				F21A64D0204AE8A700BC1033 /* SelectionCellViewModel.m in Sources */,
 				907049B82049245E007A51D9 /* DatabaseManager.m in Sources */,
+				F21A64C1204A66F900BC1033 /* SelectionViewModel.m in Sources */,
 				90E948EA2049141000FBB9E2 /* main.m in Sources */,
+				F21A64CC204ADE9A00BC1033 /* GroupSelectionTableViewCell.m in Sources */,
 				90E948D92049141000FBB9E2 /* AppDelegate.m in Sources */,
+				F21A64D3204AEB0600BC1033 /* VariationSelectionViewModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,6 +391,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREFIX_HEADER = "MakePizza/Resources/MakePizza-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -376,6 +445,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "MakePizza/Resources/MakePizza-Prefix.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -395,6 +465,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MakePizza/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Test.MakePizza;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -408,6 +479,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MakePizza/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Test.MakePizza;
 				PRODUCT_NAME = "$(TARGET_NAME)";

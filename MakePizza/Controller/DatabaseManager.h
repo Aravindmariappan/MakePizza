@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import "Group+CoreDataClass.h"
+#import "Variation+CoreDataClass.h"
 
 @interface DatabaseManager : NSObject
 
@@ -17,5 +19,7 @@
 @property (readonly, strong) NSManagedObjectContext *mainContext;
 
 - (void)saveContext;
+
+- (NSArray *)storeGroupDataFromDict:(NSDictionary *)dict;
 
 @end

@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "DatabaseManager.h"
 
 @interface AppDelegate ()
 

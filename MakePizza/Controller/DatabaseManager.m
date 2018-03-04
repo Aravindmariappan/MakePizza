@@ -72,4 +72,85 @@ static DatabaseManager *sharedInstance = nil;
     }
 }
 
+#pragma mark -
+
+- (NSArray *)storeGroupDataFromDict:(NSDictionary *)dict {
+    NSMutableArray *groups = [NSMutableArray array];
+    if([dict valueForKey:kAllVariants]) {
+        NSDictionary *allVariants = [dict valueForKey:kAllVariants];
+        NSArray *groupsDict = [allVariants valueForKey:kVariantGroups];
+        for (NSDictionary *dict in groupsDict) {
+            Group *groupItem = [self storeGroupWithDict:dict];
+            [groups addObject:groupItem];
+        }
+        [self saveContext];
+    }
+    
+    return groups;
+}
+
+#pragma mark - Group
+
+- (Group *)storeGroupWithDict:(NSDictionary *)groupDict {
+    Group *group;
+    if (groupDict != nil) {
+        NSString *groupID = [groupDict valueForKey:kGroupID];
+        group = [self fetchGroupWithGroupID:groupID.integerValue];
+        if (group == nil) {
+            group = [NSEntityDescription insertNewObjectForEntityForName:@"Group" inManagedObjectContext:self.mainContext];
+            group.groupID = groupID.integerValue;
+        }
+        group.name = [groupDict valueForKey:kGroupName];
+        NSArray *variationsDict = [groupDict valueForKey:kVariations];
+        NSMutableArray *variations = [NSMutableArray array];
+        for (NSDictionary *variationDict in variationsDict) {
+            Variation *variation = [self storeVariationWithDict:variationDict];
+            variation.group = group;
+            [variations addObject:variation];
+        }
+    }
+    
+    return group;
+}
+
+- (Group *)fetchGroupWithGroupID:(NSInteger)groupID {
+    NSPredicate *idPredicate = [NSPredicate predicateWithFormat:@"groupID = %d",groupID];
+    NSFetchRequest *fetchRequest = [Group fetchRequest];
+    [fetchRequest setPredicate:idPredicate];
+    NSArray *groupsPresent = [self.mainContext executeFetchRequest:fetchRequest error:nil];
+    Group *group = [groupsPresent firstObject];
+    
+    return group;
+}
+
+#pragma mark - Variation
+
+- (Variation *)storeVariationWithDict:(NSDictionary *)variationDict {
+    Variation *variation;
+    if (variationDict != nil) {
+        NSString *variationID = [variationDict valueForKey:kVariationID];
+        variation = [self fetchVariationWithVariationID:variationID.integerValue];
+        if (variation == nil) {
+            variation = [NSEntityDescription insertNewObjectForEntityForName:@"Variation" inManagedObjectContext:self.mainContext];
+            variation.variationID = variationID.integerValue;
+        }
+        variation.name = [variationDict valueForKey:kVariationName];
+        variation.price = (int)[variationDict valueForKey:kVariationPrice];
+        variation.isDefault = (BOOL)[variationDict valueForKey:kVariationDefault];
+        variation.inStock = (BOOL)[variationDict valueForKey:kVariationInStock];
+        variation.isVeg = (BOOL)[variationDict valueForKey:kVariationIsVeg];
+    }
+
+    return variation;
+}
+
+- (Variation *)fetchVariationWithVariationID:(NSInteger)variationID {
+    NSPredicate *idPredicate = [NSPredicate predicateWithFormat:@"variationID = %d",variationID];
+    NSFetchRequest *fetchRequest = [Variation fetchRequest];
+    [fetchRequest setPredicate:idPredicate];
+    NSArray *variationsPresent = [self.mainContext executeFetchRequest:fetchRequest error:nil];
+    Variation *variation = [variationsPresent firstObject];
+    
+    return variation;
+}
 @end
