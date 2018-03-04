@@ -8,12 +8,16 @@
 
 #import <Foundation/Foundation.h>
 #import "Group+CoreDataClass.h"
+#import "VariationSelectionViewModel.h"
 
-@interface SelectionCellViewModel : NSObject
+@interface PizzaListingCellViewModel : NSObject
 
 - (instancetype)initWithGroup:(Group *)group;
 
 @property (readonly) NSString *displayedGroupTitle;
-@property (readonly) NSArray *variationSelectionVMs;
+@property (readonly) VariationSelectionViewModel *selectedVariationVM;
+
+- (VariationSelectionViewModel *)variationSelectionVMAtIndex:(NSInteger)index;
+- (void)updateVariationSelectionAtIndex:(NSInteger)index;
 
 @end

@@ -16,4 +16,6 @@
 @property (readonly) BOOL isVeg;
 @property (readonly) BOOL isSelected;
 
+- (void)updateVariationSelection:(BOOL)isSelected;
+
 @end

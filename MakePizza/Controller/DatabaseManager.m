@@ -135,10 +135,10 @@ static DatabaseManager *sharedInstance = nil;
             variation.variationID = variationID.integerValue;
         }
         variation.name = [variationDict valueForKey:kVariationName];
-        variation.price = (int)[variationDict valueForKey:kVariationPrice];
-        variation.isDefault = (BOOL)[variationDict valueForKey:kVariationDefault];
-        variation.inStock = (BOOL)[variationDict valueForKey:kVariationInStock];
-        variation.isVeg = (BOOL)[variationDict valueForKey:kVariationIsVeg];
+        variation.price = [[variationDict valueForKey:kVariationPrice] integerValue];
+        variation.isDefault = [[variationDict valueForKey:kVariationDefault] boolValue];
+        variation.inStock = [[variationDict valueForKey:kVariationInStock] boolValue];
+        variation.isVeg = [[variationDict valueForKey:kVariationIsVeg] boolValue];
     }
 
     return variation;

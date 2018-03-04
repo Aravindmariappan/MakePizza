@@ -1,49 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lb1-Gt-9dv">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="TrebuchetMSBold.ttf">
+            <string>TrebuchetMS-Bold</string>
+        </array>
+        <array key="TrebuchetMSItalic.ttf">
+            <string>TrebuchetMS-Italic</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--Selection View Controller-->
+        <!--Make Pizza-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="SelectionViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="PizzaListingViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UDl-P2-31Q">
-                                <rect key="frame" x="0.0" y="20" width="375" height="519"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="475"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c4I-ba-ZhM" userLabel="Checkout Container">
                                 <rect key="frame" x="0.0" y="539" width="375" height="128"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Large crest" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4rK-GU-Idw" userLabel="Descrption">
-                                        <rect key="frame" x="23" y="21" width="174" height="80"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rs. 1000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ld-tR-g4w" userLabel="Price">
-                                        <rect key="frame" x="299" y="21" width="68" height="69"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="H5k-3r-JCR">
+                                        <rect key="frame" x="10" y="30" width="190" height="67.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Crust : Thin" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4rK-GU-Idw" userLabel="Crust">
+                                                <rect key="frame" x="0.0" y="0.0" width="190" height="22.5"/>
+                                                <fontDescription key="fontDescription" name="TrebuchetMS-Italic" family="Trebuchet MS" pointSize="19"/>
+                                                <color key="textColor" name="AppTheme"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Size : Large" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B33-7a-KZT" userLabel="Size">
+                                                <rect key="frame" x="0.0" y="22.5" width="190" height="22.5"/>
+                                                <fontDescription key="fontDescription" name="TrebuchetMS-Italic" family="Trebuchet MS" pointSize="19"/>
+                                                <color key="textColor" name="AppTheme"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sauce : Manchurian" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Exz-l7-oNL" userLabel="Sauce">
+                                                <rect key="frame" x="0.0" y="45" width="190" height="22.5"/>
+                                                <fontDescription key="fontDescription" name="TrebuchetMS-Italic" family="Trebuchet MS" pointSize="19"/>
+                                                <color key="textColor" name="AppTheme"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="190" id="0D4-VA-yiF"/>
+                                        </constraints>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fgr-cB-P6A">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
+                                        <color key="backgroundColor" name="AppTheme"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="039-2c-15M"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Rs. 1000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ld-tR-g4w" userLabel="Price">
+                                        <rect key="frame" x="210" y="50.5" width="150" height="27"/>
+                                        <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="23"/>
+                                        <color key="textColor" red="0.90980392160000001" green="0.0" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="fgr-cB-P6A" firstAttribute="leading" secondItem="c4I-ba-ZhM" secondAttribute="leading" id="6eT-6h-5p1"/>
                                     <constraint firstAttribute="height" constant="128" id="Ath-Gq-t97"/>
+                                    <constraint firstItem="4Ld-tR-g4w" firstAttribute="leading" secondItem="H5k-3r-JCR" secondAttribute="trailing" constant="10" id="BdZ-NT-TY3"/>
+                                    <constraint firstItem="4Ld-tR-g4w" firstAttribute="centerY" secondItem="H5k-3r-JCR" secondAttribute="centerY" id="CO4-wv-iz6"/>
+                                    <constraint firstAttribute="trailing" secondItem="fgr-cB-P6A" secondAttribute="trailing" id="DlG-3Y-Ugk"/>
+                                    <constraint firstItem="fgr-cB-P6A" firstAttribute="top" secondItem="c4I-ba-ZhM" secondAttribute="top" id="Kzg-o7-fXX"/>
+                                    <constraint firstItem="H5k-3r-JCR" firstAttribute="centerY" secondItem="c4I-ba-ZhM" secondAttribute="centerY" id="M6a-YV-BrV"/>
+                                    <constraint firstAttribute="trailing" secondItem="4Ld-tR-g4w" secondAttribute="trailing" constant="15" id="Si0-zM-Dm5"/>
+                                    <constraint firstItem="H5k-3r-JCR" firstAttribute="leading" secondItem="c4I-ba-ZhM" secondAttribute="leading" constant="10" id="qhj-mn-y8Q"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -59,13 +100,46 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Make Pizza" id="RH9-Ho-1my"/>
+                    <size key="freeformSize" width="375" height="667"/>
                     <connections>
+                        <outlet property="descriptionStackView" destination="H5k-3r-JCR" id="2a2-MP-OqW"/>
+                        <outlet property="priceStackView" destination="4Ld-tR-g4w" id="fAI-nl-pli"/>
                         <outlet property="tableView" destination="UDl-P2-31Q" id="dYM-Yk-XQt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="140" y="132.68365817091455"/>
+            <point key="canvasLocation" x="479.19999999999999" y="132.68365817091455"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="qd6-j9-FJ9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lb1-Gt-9dv" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="c7l-fJ-gBn">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="20"/>
+                            <color key="textColor" name="AppTheme"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="wfC-hN-Fc8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rlx-TU-QOe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-172" y="125"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="AppTheme">
+            <color red="0.99607843137254903" green="0.80000000000000004" blue="0.36078431372549019" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

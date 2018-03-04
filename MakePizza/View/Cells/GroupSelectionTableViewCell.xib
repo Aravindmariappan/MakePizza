@@ -1,94 +1,126 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="TrebuchetMS.ttf">
+            <string>TrebuchetMS</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GroupSelectionTableViewCellIdntifier" rowHeight="126" id="KGk-i7-Jjw" customClass="GroupSelectionTableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="126"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GroupSelectionTableViewCellIdntifier" rowHeight="107" id="KGk-i7-Jjw" customClass="PizzaGroupSelectionTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="107"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="125.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="106.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Crest" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="75m-wD-pZb">
-                        <rect key="frame" x="16" y="29" width="268" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <rect key="frame" x="16" y="16" width="268" height="20.5"/>
+                        <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
+                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="VXV-kq-tff">
-                        <rect key="frame" x="10" y="50.5" width="300" height="50"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="-1" translatesAutoresizingMaskIntoConstraints="NO" id="VXV-kq-tff">
+                        <rect key="frame" x="10" y="46.5" width="300" height="50"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fdK-GL-gqm" userLabel="View1">
-                                <rect key="frame" x="0.0" y="0.0" width="100" height="50"/>
+                                <rect key="frame" x="0.0" y="0.0" width="100.5" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="111" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Manchurian" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TBu-cZ-nnS" userLabel="Descrpition">
-                                        <rect key="frame" x="0.0" y="0.0" width="90" height="50"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="90.5" height="50"/>
+                                        <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cai-hB-sKc" userLabel="Indicator">
-                                        <rect key="frame" x="91" y="40" width="9" height="10"/>
+                                        <rect key="frame" x="91.5" y="40" width="9" height="10"/>
                                         <color key="backgroundColor" red="0.90980392160000001" green="0.0" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="9" id="11I-yz-KyC"/>
                                             <constraint firstAttribute="height" constant="10" id="KKU-fm-S1X"/>
                                         </constraints>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J5c-fa-sP3">
+                                        <rect key="frame" x="0.0" y="-0.5" width="100.5" height="50"/>
+                                        <connections>
+                                            <action selector="selectionOptionTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="QiX-Jp-zee"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="J5c-fa-sP3" firstAttribute="leading" secondItem="fdK-GL-gqm" secondAttribute="leading" id="8gN-BB-Pz3"/>
+                                    <constraint firstAttribute="bottom" secondItem="J5c-fa-sP3" secondAttribute="bottom" id="Gc7-RV-voT"/>
                                     <constraint firstAttribute="bottom" secondItem="Cai-hB-sKc" secondAttribute="bottom" id="Ger-5P-JqM"/>
                                     <constraint firstAttribute="trailing" secondItem="Cai-hB-sKc" secondAttribute="trailing" id="IVJ-kQ-s07"/>
                                     <constraint firstItem="Cai-hB-sKc" firstAttribute="leading" secondItem="TBu-cZ-nnS" secondAttribute="trailing" constant="1" id="fZa-mg-slc"/>
                                     <constraint firstItem="TBu-cZ-nnS" firstAttribute="top" secondItem="fdK-GL-gqm" secondAttribute="top" id="glt-G7-7Ul"/>
                                     <constraint firstItem="TBu-cZ-nnS" firstAttribute="leading" secondItem="fdK-GL-gqm" secondAttribute="leading" id="jYP-Ha-7TV"/>
                                     <constraint firstAttribute="bottom" secondItem="TBu-cZ-nnS" secondAttribute="bottom" id="lOF-s2-INb"/>
+                                    <constraint firstItem="J5c-fa-sP3" firstAttribute="top" secondItem="fdK-GL-gqm" secondAttribute="top" id="tly-ZE-fbm"/>
+                                    <constraint firstAttribute="trailing" secondItem="J5c-fa-sP3" secondAttribute="trailing" id="yMA-NW-8bV"/>
                                 </constraints>
                             </view>
                             <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Opq-Xo-Ew2" userLabel="View2">
-                                <rect key="frame" x="100" y="0.0" width="100" height="50"/>
+                                <rect key="frame" x="99.5" y="0.0" width="101" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="111" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Large" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l21-j5-R5b" userLabel="Descrpition">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="50"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="101" height="50"/>
+                                        <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VCS-fG-YiU">
+                                        <rect key="frame" x="0.0" y="0.0" width="101" height="50"/>
+                                        <connections>
+                                            <action selector="selectionOptionTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="3bK-GS-nve"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="VCS-fG-YiU" secondAttribute="trailing" id="3Y7-VI-YpV"/>
                                     <constraint firstItem="l21-j5-R5b" firstAttribute="leading" secondItem="Opq-Xo-Ew2" secondAttribute="leading" id="Izx-xm-RqQ"/>
                                     <constraint firstAttribute="bottom" secondItem="l21-j5-R5b" secondAttribute="bottom" id="SAX-7o-rMD"/>
+                                    <constraint firstItem="VCS-fG-YiU" firstAttribute="leading" secondItem="Opq-Xo-Ew2" secondAttribute="leading" id="bPE-Kz-yf9"/>
                                     <constraint firstItem="l21-j5-R5b" firstAttribute="top" secondItem="Opq-Xo-Ew2" secondAttribute="top" id="osF-tV-IFe"/>
                                     <constraint firstAttribute="trailing" secondItem="l21-j5-R5b" secondAttribute="trailing" id="otQ-8I-mDv"/>
+                                    <constraint firstAttribute="bottom" secondItem="VCS-fG-YiU" secondAttribute="bottom" id="uVu-P6-q5H"/>
+                                    <constraint firstItem="VCS-fG-YiU" firstAttribute="top" secondItem="Opq-Xo-Ew2" secondAttribute="top" id="uz9-os-etH"/>
                                 </constraints>
                             </view>
                             <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j3S-ES-PdZ" userLabel="View3">
-                                <rect key="frame" x="200" y="0.0" width="100" height="50"/>
+                                <rect key="frame" x="199.5" y="0.0" width="100.5" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="111" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sauce" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bc3-dz-UBY" userLabel="Descrpition">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="50"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="100.5" height="50"/>
+                                        <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="38L-2I-hd1">
+                                        <rect key="frame" x="0.0" y="-0.5" width="100.5" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="selectionOptionTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="KHN-TK-bBQ"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="Bc3-dz-UBY" firstAttribute="leading" secondItem="j3S-ES-PdZ" secondAttribute="leading" id="F4o-co-tRC"/>
+                                    <constraint firstItem="38L-2I-hd1" firstAttribute="leading" secondItem="j3S-ES-PdZ" secondAttribute="leading" id="IUc-Ve-ejG"/>
+                                    <constraint firstAttribute="bottom" secondItem="38L-2I-hd1" secondAttribute="bottom" id="Q9S-28-ZFb"/>
                                     <constraint firstItem="Bc3-dz-UBY" firstAttribute="top" secondItem="j3S-ES-PdZ" secondAttribute="top" id="W6r-f2-AO7"/>
+                                    <constraint firstItem="38L-2I-hd1" firstAttribute="top" secondItem="j3S-ES-PdZ" secondAttribute="top" id="Wat-QQ-gk9"/>
+                                    <constraint firstAttribute="trailing" secondItem="38L-2I-hd1" secondAttribute="trailing" id="oKE-Vi-4tR"/>
                                     <constraint firstAttribute="trailing" secondItem="Bc3-dz-UBY" secondAttribute="trailing" id="qUM-KQ-fQB"/>
                                     <constraint firstAttribute="bottom" secondItem="Bc3-dz-UBY" secondAttribute="bottom" id="vHD-4G-2i0"/>
                                 </constraints>
@@ -100,11 +132,11 @@
                     </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="VXV-kq-tff" secondAttribute="bottom" constant="25" id="KBu-CG-OCY"/>
-                    <constraint firstItem="75m-wD-pZb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="18" id="Lot-3y-R63"/>
+                    <constraint firstAttribute="bottom" secondItem="VXV-kq-tff" secondAttribute="bottom" constant="10" id="Ez4-fh-yNg"/>
+                    <constraint firstItem="75m-wD-pZb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="Lot-3y-R63"/>
                     <constraint firstAttribute="trailing" secondItem="VXV-kq-tff" secondAttribute="trailing" constant="10" id="TyK-WW-6BX"/>
                     <constraint firstAttribute="trailingMargin" secondItem="75m-wD-pZb" secondAttribute="trailing" constant="20" id="egL-tF-46k"/>
-                    <constraint firstItem="VXV-kq-tff" firstAttribute="top" secondItem="75m-wD-pZb" secondAttribute="bottom" constant="0.5" id="gza-Ga-Pxo"/>
+                    <constraint firstItem="VXV-kq-tff" firstAttribute="top" secondItem="75m-wD-pZb" secondAttribute="bottom" constant="10" id="gza-Ga-Pxo"/>
                     <constraint firstItem="VXV-kq-tff" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="hEs-OC-14G"/>
                     <constraint firstItem="75m-wD-pZb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="l2y-dn-hEy"/>
                 </constraints>
@@ -112,11 +144,12 @@
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
                 <outlet property="groupNameLabel" destination="75m-wD-pZb" id="4Cl-Gl-Gv9"/>
+                <outlet property="stackView" destination="VXV-kq-tff" id="DYH-E1-YLA"/>
                 <outletCollection property="optionViews" destination="fdK-GL-gqm" id="3A2-oW-5Z2"/>
                 <outletCollection property="optionViews" destination="Opq-Xo-Ew2" id="hlw-wG-RY8"/>
                 <outletCollection property="optionViews" destination="j3S-ES-PdZ" id="rle-c9-A8f"/>
             </connections>
-            <point key="canvasLocation" x="-43" y="-45"/>
+            <point key="canvasLocation" x="-468" y="-90.5"/>
         </tableViewCell>
     </objects>
 </document>

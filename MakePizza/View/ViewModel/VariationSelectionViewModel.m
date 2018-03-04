@@ -30,4 +30,7 @@
     return self;
 }
 
+- (void)updateVariationSelection:(BOOL)isSelected {
+    self.isSelected = isSelected;
+}
 @end
