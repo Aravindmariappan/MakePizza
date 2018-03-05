@@ -41,12 +41,12 @@
             Variation *selectedVariation = [cellViewModel getSelectedVariation];
             [self addedSelectedVariation:selectedVariation];
         }
-        self.exclusionGroups = [self configureExclusionGroups];
+        [self configureExclusionGroups];
         completion(self.contentArray);
     }];
 }
 
-- (NSMutableSet *)configureExclusionGroups {
+- (void)configureExclusionGroups {
     NSSet *allVariations = [self.cart variations];
     NSMutableSet *exclusionGroups = [NSMutableSet set];
     for (Variation *variation in allVariations) {
@@ -58,7 +58,7 @@
         }
     }
     
-    return exclusionGroups;
+    self.exclusionGroups = exclusionGroups;
 }
 
 - (NSInteger)getGroupsCount {

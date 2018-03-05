@@ -4,12 +4,16 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="TrebuchetMS.ttf">
+            <string>TrebuchetMS</string>
+        </array>
         <array key="TrebuchetMSBold.ttf">
             <string>TrebuchetMS-Bold</string>
         </array>
@@ -26,11 +30,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UDl-P2-31Q">
-                                <rect key="frame" x="0.0" y="64" width="375" height="475"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                            </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c4I-ba-ZhM" userLabel="Checkout Container">
                                 <rect key="frame" x="0.0" y="539" width="375" height="128"/>
                                 <subviews>
@@ -87,14 +86,46 @@
                                     <constraint firstItem="H5k-3r-JCR" firstAttribute="leading" secondItem="c4I-ba-ZhM" secondAttribute="leading" constant="10" id="qhj-mn-y8Q"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UDl-P2-31Q">
+                                <rect key="frame" x="0.0" y="64" width="375" height="475"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </tableView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OyA-zb-3mF" userLabel="Loading Placeholder">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="vli-ty-Biv">
+                                        <rect key="frame" x="177" y="261" width="20" height="20"/>
+                                        <color key="color" name="AppTheme"/>
+                                    </activityIndicatorView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Ingredients are being made" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ojf-A9-iNG">
+                                        <rect key="frame" x="10" y="323" width="355" height="20"/>
+                                        <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Ojf-A9-iNG" firstAttribute="leading" secondItem="OyA-zb-3mF" secondAttribute="leading" constant="10" id="1ex-cA-4bb"/>
+                                    <constraint firstItem="vli-ty-Biv" firstAttribute="centerX" secondItem="OyA-zb-3mF" secondAttribute="centerX" id="DeQ-22-dR4"/>
+                                    <constraint firstItem="Ojf-A9-iNG" firstAttribute="top" secondItem="vli-ty-Biv" secondAttribute="bottom" constant="42" id="ZEB-zu-o49"/>
+                                    <constraint firstItem="vli-ty-Biv" firstAttribute="centerY" secondItem="OyA-zb-3mF" secondAttribute="centerY" constant="-62.5" id="azP-3C-57w"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ojf-A9-iNG" secondAttribute="trailing" constant="10" id="uFP-gC-jhI"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="c4I-ba-ZhM" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="5g9-wF-lwH"/>
+                            <constraint firstItem="OyA-zb-3mF" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Ky4-eH-HdC"/>
                             <constraint firstItem="UDl-P2-31Q" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="LxS-2r-csB"/>
                             <constraint firstItem="c4I-ba-ZhM" firstAttribute="top" secondItem="UDl-P2-31Q" secondAttribute="bottom" id="NIA-1b-eUi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OyA-zb-3mF" secondAttribute="trailing" id="P9G-Hm-W65"/>
+                            <constraint firstItem="OyA-zb-3mF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="VNG-u4-IeN"/>
                             <constraint firstItem="c4I-ba-ZhM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="faG-L0-tkL"/>
                             <constraint firstItem="c4I-ba-ZhM" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="gWo-g1-zHE"/>
+                            <constraint firstAttribute="bottom" secondItem="OyA-zb-3mF" secondAttribute="bottom" id="iGK-Rs-xJ2"/>
                             <constraint firstItem="UDl-P2-31Q" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="tQK-Ky-OlA"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UDl-P2-31Q" secondAttribute="trailing" id="ygI-7G-57q"/>
                         </constraints>
@@ -104,6 +135,7 @@
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
                         <outlet property="descriptionStackView" destination="H5k-3r-JCR" id="2a2-MP-OqW"/>
+                        <outlet property="loadingPlaceholder" destination="OyA-zb-3mF" id="SM5-KJ-hzL"/>
                         <outlet property="priceStackView" destination="4Ld-tR-g4w" id="fAI-nl-pli"/>
                         <outlet property="tableView" destination="UDl-P2-31Q" id="dYM-Yk-XQt"/>
                     </connections>
@@ -138,6 +170,9 @@
         </scene>
     </scenes>
     <resources>
+        <namedColor name="AppTheme">
+            <color red="0.99607843137254903" green="0.80000000000000004" blue="0.36078431372549019" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="AppTheme">
             <color red="0.99607843137254903" green="0.80000000000000004" blue="0.36078431372549019" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

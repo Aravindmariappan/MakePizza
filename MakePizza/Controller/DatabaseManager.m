@@ -95,7 +95,9 @@ static DatabaseManager *sharedInstance = nil;
         for (NSArray *exclusionGroup in exclusionList) {
             [self updateExclusionList:exclusionGroup];
         }
-        [self saveContext];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self saveContext];
+        });
     }
     
     return groups;
@@ -184,6 +186,7 @@ static DatabaseManager *sharedInstance = nil;
             [self saveContext];
         }
         _defaultCart.variations = nil;
+        _defaultCart.totalPrice = 0;
     }
     
     return _defaultCart;

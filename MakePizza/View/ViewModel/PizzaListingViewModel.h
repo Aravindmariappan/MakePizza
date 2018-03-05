@@ -21,6 +21,6 @@
 - (PizzaListingCellViewModel *)cellViewModelAtIndex:(NSInteger)index;
 - (NSString *)descriptionForVariantAtIndex:(NSInteger)index;
 - (void)addedSelectedVariation:(Variation *)variation;
-- (NSMutableSet *)configureExclusionGroups;
+- (void)configureExclusionGroups;
 
 @end

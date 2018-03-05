@@ -39,11 +39,11 @@
     NSMutableArray *variationVMs = [NSMutableArray array];
     for (Variation *variation in variations) {
         VariationSelectionViewModel *variationVM;
-            variationVM = [[VariationSelectionViewModel alloc] initWithVariation:variation isSelected:variation.isDefault];
-            if(variation.isDefault == YES) {
-                self.selectedVariationVM = variationVM;
-                self.price = [self getPriceString:variation.price];
-            }
+            variationVM = [[VariationSelectionViewModel alloc] initWithVariation:variation isSelected:NO];
+//            if(variation.isDefault == YES) {
+//                self.selectedVariationVM = variationVM;
+//                self.price = [self getPriceString:variation.price];
+//            }
         [variationVMs addObject:variationVM];
     }
     return variationVMs;
