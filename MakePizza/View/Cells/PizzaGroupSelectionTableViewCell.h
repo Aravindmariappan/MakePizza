@@ -13,6 +13,7 @@
 @protocol GroupSelectionTableViewCellDelegate <NSObject>
 
 - (void)groupSelectionCell:(PizzaGroupSelectionTableViewCell *)cell selectedWithVariationAtIndex:(NSInteger)index;
+- (void)groupSelectionCell:(PizzaGroupSelectionTableViewCell *)cell withError:(NSString *)error;
 
 @end
 
@@ -20,7 +21,7 @@
 
 @property id<GroupSelectionTableViewCellDelegate>delegate;
 
-@property (readonly) PizzaListingCellViewModel *selectionCellVM;
+@property (readonly) PizzaListingCellViewModel *pizzaListingCellVM;
 
 + (NSString *)cellIdentifier;
 - (void)configureCellWithViewModel:(PizzaListingCellViewModel *)viewModel;

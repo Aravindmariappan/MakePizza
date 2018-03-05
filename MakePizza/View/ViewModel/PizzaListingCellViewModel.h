@@ -16,9 +16,11 @@
 
 @property (readonly) NSString *displayedGroupTitle;
 @property (readonly) NSString *price;
+@property (readonly) NSString *errorText;
 
 - (VariationSelectionViewModel *)variationSelectionVMAtIndex:(NSInteger)index;
-- (void)updateVariationSelectionAtIndex:(NSInteger)index;
+- (BOOL)updateVariationSelectionAtIndex:(NSInteger)index;
 - (Variation *)getSelectedVariation;
+- (void)configureExclusionListWithExclusionGroup:(NSSet *)exclusionGroups;
 
 @end

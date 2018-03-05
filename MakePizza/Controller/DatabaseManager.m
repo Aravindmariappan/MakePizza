@@ -91,6 +91,10 @@ static DatabaseManager *sharedInstance = nil;
             Group *groupItem = [self storeGroupWithDict:dict];
             [groups addObject:groupItem];
         }
+        NSArray *exclusionList = [allVariants valueForKey:kExcludList];
+        for (NSArray *exclusionGroup in exclusionList) {
+            [self updateExclusionList:exclusionGroup];
+        }
         [self saveContext];
     }
     
@@ -162,6 +166,13 @@ static DatabaseManager *sharedInstance = nil;
     return variation;
 }
 
+- (NSArray *)fetchAllVariations {
+    NSFetchRequest *fetchRequest = [Variation fetchRequest];
+    NSArray *variationsPresent = [self.mainContext executeFetchRequest:fetchRequest error:nil];
+    
+    return variationsPresent;
+}
+
 #pragma mark - Cart
 
 - (Cart *)defaultCart {
@@ -206,8 +217,31 @@ static DatabaseManager *sharedInstance = nil;
         price += variation.price;
     }
     cart.totalPrice = price;
-    [self saveContext];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self saveContext];
+    });
 }
 
+#pragma mark - Handle Exclusion List
+
+- (void)updateExclusionList:(NSArray *)exclusionsGroup {
+    Variation *firstVariation;
+    NSMutableSet *exclusions = [NSMutableSet set];
+    for (NSDictionary *exclusionItem in exclusionsGroup) {
+        NSString *variationID = [exclusionItem valueForKey:kExclusionVariationID];
+        Variation *variation = [self fetchVariationWithVariationID:variationID.integerValue];
+        if (variation == nil) {
+            continue;
+        }
+        if (firstVariation == nil) {
+            firstVariation = variation;
+        }
+        else {
+            [exclusions addObject:variation];
+        }
+    }
+    [firstVariation addExclusions:exclusions];
+    firstVariation = nil;
+}
 
 @end

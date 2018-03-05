@@ -25,5 +25,6 @@
 - (NSArray *)storeGroupDataFromDict:(NSDictionary *)dict;
 
 - (void)insertVariation:(Variation *)variation intoCart:(Cart *)cart;
+- (NSArray *)fetchAllVariations;
 
 @end

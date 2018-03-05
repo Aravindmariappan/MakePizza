@@ -76,9 +76,24 @@
 #pragma mark - GroupSelectionTableViewCellDelegate
 
 - (void)groupSelectionCell:(PizzaGroupSelectionTableViewCell *)cell selectedWithVariationAtIndex:(NSInteger)index {
-    PizzaListingCellViewModel *cellVM = cell.selectionCellVM;
+    PizzaListingCellViewModel *cellVM = cell.pizzaListingCellVM;
     [self.selectionVM addedSelectedVariation:[cellVM getSelectedVariation]];
+    [self.selectionVM configureExclusionGroups];
     [self configureDescriptionLabels];
+    [self.tableView reloadData];
+}
+
+- (void)groupSelectionCell:(PizzaGroupSelectionTableViewCell *)cell withError:(NSString *)error {
+    [self showAlertWithAlertText:error];
+}
+
+#pragma mark -
+
+- (void)showAlertWithAlertText:(NSString *)alertText {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Error" message:alertText preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction* okayButton = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil];
+    [alertController addAction:okayButton];
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 @end

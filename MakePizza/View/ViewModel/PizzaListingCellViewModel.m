@@ -14,6 +14,7 @@
 @property (readwrite) NSArray *variationSelectionVMs;
 @property (readwrite, nonatomic) NSString *displayedGroupTitle;
 @property (readwrite, nonatomic) NSString *price;
+@property (readwrite) NSString *errorText;
 @property VariationSelectionViewModel *selectedVariationVM;
 
 @end
@@ -37,11 +38,12 @@
     NSArray *variations = [group.variations sortedArrayUsingDescriptors:@[sortDescriptor]];
     NSMutableArray *variationVMs = [NSMutableArray array];
     for (Variation *variation in variations) {
-        VariationSelectionViewModel *variationVM = [[VariationSelectionViewModel alloc] initWithVariation:variation isSelected:variation.isDefault];
-        if(variation.isDefault == YES) {
-            self.selectedVariationVM = variationVM;
-            self.price = [self getPriceString:variation.price];
-        }
+        VariationSelectionViewModel *variationVM;
+            variationVM = [[VariationSelectionViewModel alloc] initWithVariation:variation isSelected:variation.isDefault];
+            if(variation.isDefault == YES) {
+                self.selectedVariationVM = variationVM;
+                self.price = [self getPriceString:variation.price];
+            }
         [variationVMs addObject:variationVM];
     }
     return variationVMs;
@@ -51,16 +53,39 @@
     return [self.variationSelectionVMs objectAtIndex:index];
 }
 
-- (void)updateVariationSelectionAtIndex:(NSInteger)index {
+- (BOOL)updateVariationSelectionAtIndex:(NSInteger)index {
     VariationSelectionViewModel *unselectedViewModel = self.selectedVariationVM;
-    [unselectedViewModel updateVariationSelection:NO];
-    self.selectedVariationVM = [self.variationSelectionVMs objectAtIndex:index];
-    [self.selectedVariationVM updateVariationSelection:YES];
-    self.price = [self getPriceString:self.selectedVariationVM.price];
+    VariationSelectionViewModel *currentlySelectedVM = [self.variationSelectionVMs objectAtIndex:index];
+    if (currentlySelectedVM.isExclusion == YES) {
+        self.errorText = [currentlySelectedVM exclusionErrorString];
+        return NO;
+    }
+    else {
+        [unselectedViewModel updateVariationSelection:NO];
+        self.selectedVariationVM = currentlySelectedVM;
+        [self.selectedVariationVM updateVariationSelection:YES];
+        self.price = [self getPriceString:self.selectedVariationVM.price];
+        return YES;
+    }
 }
 
 - (Variation *)getSelectedVariation {
     return self.selectedVariationVM.variation;
+}
+
+- (void)configureExclusionListWithExclusionGroup:(NSSet *)exclusionGroups {
+    for (VariationSelectionViewModel *variationVM in self.variationSelectionVMs) {
+        Variation *variation = variationVM.variation;
+        NSMutableArray *exclusionList = [NSMutableArray array];
+        for (NSSet *exclusionGroup in exclusionGroups) {
+            if ([exclusionGroup containsObject:variation]) {
+                NSMutableArray *exclusionArray = [exclusionGroup.allObjects mutableCopy];
+                [exclusionArray removeObject:variation];
+                [exclusionList addObject:[exclusionArray firstObject]];
+            }
+        }
+        [variationVM configureWithExclusion:exclusionList];
+    }
 }
 
 #pragma mark -

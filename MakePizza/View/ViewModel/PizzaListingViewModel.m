@@ -11,6 +11,7 @@
 @interface PizzaListingViewModel()
 
 @property (readwrite) NSMutableArray *contentArray;
+@property (readwrite) NSMutableSet *exclusionGroups;
 @property (readwrite) NSString *itemDescription;
 @property (readwrite) NSString *itemCost;
 @property (readwrite) Cart *cart;
@@ -23,6 +24,7 @@
     self = [super init];
     if (self) {
         self.contentArray = [NSMutableArray array];
+        self.exclusionGroups = [NSMutableSet set];
         self.itemDescription = @"No Selection";
         self.itemCost = [NSString stringWithFormat:@"₹ %.2f",self.cart.totalPrice];
         self.cart = [[DatabaseManager sharedInstance] defaultCart];
@@ -39,9 +41,24 @@
             Variation *selectedVariation = [cellViewModel getSelectedVariation];
             [self addedSelectedVariation:selectedVariation];
         }
-
+        self.exclusionGroups = [self configureExclusionGroups];
         completion(self.contentArray);
     }];
+}
+
+- (NSMutableSet *)configureExclusionGroups {
+    NSSet *allVariations = [self.cart variations];
+    NSMutableSet *exclusionGroups = [NSMutableSet set];
+    for (Variation *variation in allVariations) {
+        if ([variation.exclusions count]) {
+            for (Variation *exclusion in variation.exclusions) {
+                NSSet *exclusionGroup = [NSSet setWithArray:@[exclusion, variation]];
+                [exclusionGroups addObject:exclusionGroup];
+            }
+        }
+    }
+    
+    return exclusionGroups;
 }
 
 - (NSInteger)getGroupsCount {
@@ -50,6 +67,7 @@
 
 - (PizzaListingCellViewModel *)cellViewModelAtIndex:(NSInteger)index {
     PizzaListingCellViewModel *cellViewModel = [self.contentArray objectAtIndex:index];
+    [cellViewModel configureExclusionListWithExclusionGroup:self.exclusionGroups];
     
     return cellViewModel;
 }
